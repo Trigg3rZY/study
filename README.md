@@ -34,3 +34,4 @@
 
 - [2026-06-19-llm-integration-and-model-selection.md](2026-06-19-llm-integration-and-model-selection.md) —— LLM 接入与「让用户自选模型」:模型只是可替换后端,工程在外面那层抽象(统一接口、能力感知、BYO-key、结构化输出)。function calling / tool_choice / temperature / structured outputs / reasoning effort,对比 Vercel AI SDK / LiteLLM / OpenRouter。
 - [2026-06-19-mcp-model-context-protocol.md](2026-06-19-mcp-model-context-protocol.md) —— MCP:工具/数据接入的开放标准(≠ 模型接入,两者正交)。host/client/server 角色、原语、传输(stdio + Streamable HTTP)、安全。
+- [2026-06-22-embedded-db-and-optimistic-concurrency.md](2026-06-22-embedded-db-and-optimistic-concurrency.md) —— 持久化层两个选择:嵌入式 DB(pglite,WASM 版 Postgres)vs 服务端 pg(按规模选、留毕业口子);以及「用 DB 不变量(unique version + 单 head 部分唯一索引)+ 单一事务入口」做乐观并发,完整性靠约束、意图靠领域逻辑。账本 vs 业务数据分两个库。
