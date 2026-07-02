@@ -10,27 +10,6 @@
 
 ---
 
-## 摘要
-
-本文不是严格意义上的学术论文,而是一篇带论文式骨架的工程学习笔记。它讨论一个实践问题:为什么 coding agent 在成熟 codebase 上修 bug、加功能、做 investigation 往往效果很好,但从 0 构建产品时容易中途失控。核心结论是:成熟 codebase 自带架构、测试、命名、CI、历史代码等隐形 harness;从 0 项目缺少这层外壳,所以 PRD、tech spec、data model、UI design 即使写得很详细,也不能自动变成 agent 可执行、可验证的小任务。
-
-本文提出的实践框架是 **Traceable Task Harness**:用稳定 Source ID 把 PRD / flow / data model / UI contract 中的关键事实索引起来,再把 milestone 编译成带 Context Pack、Acceptance Criteria、Verification Command、Progress State 的小任务。这样 agent 每次工作时只读取当前任务所需的高信号上下文,并通过明确验收方式判断是否完成。
-
-**研究问题**:如何把从 0 产品开发中的大块产品文档,转化为 coding agent 能稳定执行的小任务,同时避免上下文污染、遗漏关键约束和"看起来完成"的幻觉?
-
-**核心主张**:从 0 vibe coding 的关键不是写更长的 PRD,而是建立一层把产品意图翻译成可追溯任务和可验证反馈的 harness。
-
-**主要贡献**:
-
-1. 区分成熟 codebase 的隐形 harness 与从 0 项目的 harness 真空。
-2. 将"关键词关联上下文"升级为稳定 Source ID + Context Pack。
-3. 给出从 product brief、requirements、flows、data model、UI contracts 到 feature list / issue 的最小文件结构。
-4. 给出 issue 模板、prompt 模板和对抗性检查,让这套方法能直接落地。
-
-**适用边界**:这不是大型组织的完整需求管理方法,也不是证明某种 agent 开发范式优于另一种的实证研究。它适用于单人或小团队用 Codex / Claude Code 等 coding agent 从 0 做 MVP,目标是用最小流程约束换取更稳定的上下文、验收和产品方向。
-
----
-
 ## 0. 一句话定位
 
 > **成熟 codebase 自带隐形 harness,从 0 项目没有。所以从 0 vibe coding 的关键步骤,是把大文档编译成一组带 source id、context pack、验收标准和验证命令的任务。** 这不是项目管理仪式,而是给 agent 的上下文加载器和完成判定器。
