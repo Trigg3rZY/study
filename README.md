@@ -29,6 +29,7 @@
 
 - [2026-06-20-delivery-harness.md](2026-06-20-delivery-harness.md) —— 交付外壳:把"确定性外壳"从产品延伸到开发流程本身。AI 写得快→错误注入也便宜→门控必须更硬更自动。分支/合并纪律、必需检查、CodeQL、评审闭环(thread-resolution)、供应链/密钥硬化、worktree 隔离、PR 作为契约。全部用实战配置打底,附落地清单。
 - [2026-06-20-agentic-multi-agent-workflows.md](2026-06-20-agentic-multi-agent-workflows.md) —— Agentic 工作流与多 agent 并行:瓶颈是协调+集成+评审(分解质量 > agent 数量)。并行三难(去重/依赖序/通信)、orchestrator vs workflow、「lead + worktree + 串行合并」拓扑、GitHub Projects 当免费 Jira。
+- [2026-07-02-traceable-task-harness.md](2026-07-02-traceable-task-harness.md) —— Traceable Task Harness:从 0 vibe coding app 时,把 PRD / tech spec / data model / UI 设计编译成带 Source ID、Context Pack、验收标准和验证命令的可执行任务。解决"文档很多但 agent 仍然跑偏"的问题,附 issue 模板、文件结构、prompt 和参考文献。
 
 ## 技术参考(把 AI 装进产品的具体技术)
 
